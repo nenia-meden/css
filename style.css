@@ -1,0 +1,159 @@
+@import url('./variables.css');
+/* :root{
+    --colore-primario: #2e5e86;
+    --colore-secondario: #26ba75;
+    --colore-info: #a4a4a4;
+} */
+/* cusstom properties! sostanzialmente qua in alto puoi creare delle variabili richiamabili nel testo come "var";
+questo è particolarmente utile per le palette di colori, anche facilmente modificabili */
+body > header{
+    background-color: #33A1FD;
+    min-height: 4vh;
+}
+body > main{
+    background-color: #B4EDD2;
+    min-height: 86vh;
+}
+body > footer{
+/* footer.pie-di-pagina{ */
+    background-color: #33A1FD;
+    min-height: 10vh;
+}
+.container-ifts{
+    margin: 0 auto;
+    padding: 15px 10px;
+    max-width: 90vw;
+}
+/*menu*/
+nav#menu {
+    padding: 10px 0
+}
+nav#menu > ul{
+    margin-bottom: 0;
+}
+nav#menu a{
+    color: white;
+}
+nav#menu > ul {
+    text-align: center;
+}
+nav#menu > ul > li{
+    display: inline;
+}
+nav#menu > ul > li ~ li{
+    margin-left: 10px;
+}
+nav#menu>ul>li>a::after {
+    content: " » ";
+}
+nav#menu>ul>li>a:hover {
+    background-color: rgb(0, 255, 179);
+    padding: 8px;
+}
+/* hover per far apparire cose quando ci scorri sopra con il cursore */
+/*news*/
+section#news > h2{
+    text-align: center;
+}
+section#news > article{
+    display: inline-block;
+    border: 1px solid var(--colore-info);
+    padding: 1%;
+}
+section#news article:nth-child(2) {
+    background-color: red;
+}
+section#news article > p::first-letter {
+    font-size: 5rem;
+} 
+/* questo serve per mettere la prima lettera di una dimensione diversa */
+/* section#news:nth-child(2) {
+    background-color: red;
+} */
+a:link{
+    color: var(--bs-gray-dark);
+ }
+ a:active{
+    color: var(--bs-info);
+ }
+ a:visited{
+    color: var(--bs-yellow);
+ }
+ /* scacchiera */
+
+section#scacchiera {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    font-size: 0;
+}
+section#scacchiera > div{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+section#scacchiera div:nth-child(odd){
+    background-color:black;
+}
+section#scacchiera div:nth-child(even){
+    background-color:rgb(255, 255, 255);
+}
+/*footer*/
+span[data-ifts], address[data-ifts]{
+    font-size: 0.5em;
+    font-style: italic;
+    color: rgb(255, 255, 255);
+}
+span[data-ifts="piva"]{
+    background-color: var(--colore-info);
+    /* qui si è richiamata la var della root */
+}
+/* form */
+input[type="checkbox"]:checked {
+    margin-left: 15px;
+ }
+ input[type="checkbox"]:checked + label {
+    background-color: rebeccapurple;
+    padding: 8px;
+    color: white;
+ }
+/*footer*/
+@media screen and (min-width: 768px) {
+    body > header{
+        background-color: #C0D684;
+        min-height: 6vh;
+    }
+    body > main{
+        background-color: #CBEAA6;
+        min-height: 74vh;
+    }
+    body > footer{
+        background-color: #C0D684;
+        min-height: 20vh;
+    }
+    section#news > article{
+        width: 49%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    body > header{
+        background-color: #7AE582;
+        min-height: 8vh;
+    }
+    body > main{
+        background-color: #c0f9c4;
+        min-height: 62vh;
+
+    }
+    body > footer{
+        background-color: #7AE582;
+        min-height: 30vh;
+    }
+    section#news > article{
+        width: 32%;
+        margin-right: 50px;
+    }
+    .container-ifts{
+        display:flex;
+    }
+}
