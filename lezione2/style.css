@@ -1,0 +1,89 @@
+header{
+    background-color: #F2F6D0;
+    min-height: 50px;
+}
+main{
+    background-color: #D0E1D4;
+    min-height: 80px;
+}
+footer{
+    background-color: #D9D2B6;
+    min-height: 30px;
+}
+main p {
+    font-style: italic;
+}
+
+/*  in questo momento io sto nterferendo con lo stile del footer */
+
+main article footer p {
+    font-style: italic;
+    color: red;
+}
+
+/* per interferire solo nel footer */
+
+footer .pie-di-pagina{
+    background-color: #206850;
+    min-height: 10vh;
+}
+
+/*  questo significa tutto ciò che è discendente dal footer che ha dentro la classe piè di pagina */
+
+footer.pie-di-pagina{
+    background-color: #a8a797;
+    min-height: 10vh;
+}
+    /* solo il footer class piè di pagina. ergo: uno spazio */
+    /* funziona anche body > footer (va a prendere solo il footer figlio del body) */
+
+ul#vantaggi > li {
+    list-style-type: disc;
+}
+
+nav#menu > ul {
+    text-align: center;
+}
+
+nav#menu > ul > li > a {
+    text-decoration: none;
+    color: #333436;
+}
+
+h1 {text-align: center;}
+
+nav#menu > ul > li{
+    display: inline;
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 768px){
+    header{
+        background-color: #E6EED6;
+        min-height: 60px;
+    }
+    main{
+        background-color: #DDE2C6;
+        min-height: 120px;
+    }
+    footer{
+        background-color: #BBC5AA;
+        min-height: 40px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    header{
+        background-color: #DAD2BC;
+        min-height: 80px;
+    }
+    main{
+        background-color: #A99985;
+        min-height: 160px;
+    }
+    footer{
+        background-color: #F5F1ED;
+        min-height: 50px;
+    }
+}
+

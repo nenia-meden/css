@@ -1,0 +1,172 @@
+@import url('./variables.css');
+*{
+    list-style-type: none;
+}
+/*barra dei riferimenti in alto (topbar)*/
+section#topbar {
+    background-color: rgb(160, 218, 160);
+    padding: 0.5rem 1rem;
+    overflow: auto;
+}
+section#topbar a {
+    color: white;
+}
+section#topbar a:nth-child(1) {
+    float: left; 
+    /* il float estrae l'oggetto dal flusso, quindi per rimediare mi serve overflow auto nel contenitore */
+}
+section#topbar a:nth-child(2) {
+    float: right;
+}
+/*titoli h1*/
+h1{
+    text-transform: uppercase;
+    text-shadow: 2px 8px 0px black;
+
+}
+/*esempi posizionamento sticky*/
+h1 { color: rgb(12, 71, 12);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+nav#menu {
+    background-color: rgb(66, 117, 55);
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+nav#menu ul  {
+    text-align: center;
+}
+nav#menu ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav#menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+}
+nav#menu ul li a:hover {
+    color: rgb(0, 0, 0);
+}
+section#posizionamenti {
+    height: 300px;
+    border: 1px solid black;
+    position: relative;
+}
+/*esempi posizionamento relative e absolute*/
+section#posizionamenti div {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 50%;
+}
+section#posizionamenti div:nth-child(1){
+    background-color: var(--bs-blue);
+    position: relative;
+    /* se metto "position: static, non cambia a seconda del top left right, resta lì dov'è */
+    /* se entrambi hanno la position relative, ha sempre la priorità (sta davanti) quello che viene dopo nel codice, se si vuole modificare questa condizione si usa lo z-index*/
+    top: 15px;
+    left: 50px;
+}
+section#posizionamenti div:nth-child(2){
+    background-image: url(https://e7.pngegg.com/pngimages/284/947/png-clipart-smiley-desktop-happiness-face-smiley-miscellaneous-face-thumbnail.png);
+    background-size:cover; /*fa in modo che l'immagine si adatti al contenitore*/
+    
+    position: absolute;
+    /* position absolute: fa in modo che la posizione dell'oggetto dipenda da quella del padre con un posizionamento almeno diverso da static, se non c'è niente prima, si attacca al body */
+    top: 0;
+    left: 0;
+    z-index: 2;
+    /* questo serve a dargli la priorità rispetto a ciò che sta davanti e ciò che sta dietro */
+}
+
+section#posizionamenti div:nth-child(3){
+    background-color: var(--bs-orange);
+}
+section#posizionamenti div:nth-child(4){
+    background-color: var(--bs-success);
+    position: relative;
+    top: 15px;
+    right: 50px;
+}
+/*section missione per background*/
+section#mission {
+    background-image: url('https://d2rqvd0kuag1qx.cloudfront.net/_1920xAUTO_crop_center-center_none/caterpillar-2.jpg');
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed; 
+    /* questo fa in modo che l'immagine sia fissata sul body, quindi rimane bloccata mentre muovi la pagina, in modo che si vedano più sezioni di essa */
+    min-height: 250PX;
+    margin-top: 2em;
+    position: relative;
+}
+.pellicola{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(60, 78, 46, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+section#mission h2{
+    text-align: center;
+    color: white;
+    padding-top: 110px;
+    position: relative; 
+    /* metto position relative anche qui in modo che prenda lo z-index corretto */
+
+}
+/*table css*/
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    cursor: not-allowed;
+}
+/*flexbox*/
+section#news{
+    display: flex;
+    flex-direction: column;
+}
+/*icona posizionamento fixed*/
+.bi-whatsapp {
+    color: var(--bs-green);
+    font-size: 2rem;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99;
+    /* visibility: hidden; */
+    /* display: none; */
+}
+.bi-whatsapp {
+    color: var(--bs-green);
+    font-size: 2rem;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99;
+}
+/* visibility hidden: c'è ma non si vede, ma occupa spazio;
+display hidden: è fantasma, c'è ma non si vede nè occupa spazio */
+/*flexbox*/
+@media screen and (min-width: 768px){
+    section#news{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    section#news article {
+        max-width: 40%;
+    }
+}
+@media screen and (min-width: 1200px){
+    section#news article {
+        max-width: 30%;
+    }
+}
